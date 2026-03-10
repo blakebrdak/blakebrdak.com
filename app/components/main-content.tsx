@@ -1,7 +1,16 @@
 import { Flex, Image, Stack, Text } from '@mantine/core';
 import { LinkWithIcon } from './link-with-icon';
+import { useMounted } from '@mantine/hooks';
 
 export function MainContent() {
+  const mounted = useMounted();
+
+  const textAnimation = (delay = 0) => ({
+    transform: mounted ? 'translateY(0)' : 'translateY(-20px)',
+    opacity: mounted ? 1 : 0,
+    transition: `transform 1s ease ${delay}ms, opacity 1s ease ${delay}ms`,
+  });
+
   return (
     <Flex
       direction={{ base: 'column', sm: 'row' }}
@@ -19,20 +28,23 @@ export function MainContent() {
         radius="md"
         style={{
           boxShadow: '0 0 50px -12px rgb(93, 93, 93)',
+          transform: mounted ? 'translateX(0)' : 'translateX(-150px)',
+          opacity: mounted ? 1 : 0,
+          transition: 'transform 1s ease, opacity 1s ease',
         }}
       />
       <Stack gap="s" align="start" justify="start">
-        <Text size="xl" fw={700}>
+        <Text size="xl" fw={700} style={textAnimation(800)}>
           Hi, I’m{' '}
           <Text span c="blue.4" fw={700}>
             Blake!
           </Text>
         </Text>
-        <Text size="md">
+        <Text size="md" style={textAnimation(1600)}>
           I build elegant solutions to complex problems. I’m passionate about
           beautiful software, smooth user experience, and continuous learning.
         </Text>
-        <Text size="md">
+        <Text size="md" style={textAnimation(2400)}>
           I’m currently a software engineer at{' '}
           <LinkWithIcon
             href="https://www.nutshell.com"
@@ -41,7 +53,7 @@ export function MainContent() {
           />
           !
         </Text>
-        <Text size="md">
+        <Text size="md" style={textAnimation(3200)}>
           You can find me on{' '}
           <LinkWithIcon
             href="https://www.linkedin.com/in/blake-brdak"
