@@ -33,7 +33,7 @@ export function MainContent() {
           beautiful software, smooth user experience, and continuous learning.
         </Text>
         <Text size="md">
-          I’m currently on the awesome team at{' '}
+          I’m currently a software engineer at{' '}
           <LinkWithIcon
             href="https://www.nutshell.com"
             label="Nutshell CRM"
