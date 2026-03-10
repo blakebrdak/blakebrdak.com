@@ -9,7 +9,7 @@ import {
 
 export default function Home() {
   return (
-    <AppShell padding="md">
+    <AppShell padding="md" header={{ height: 70 }}>
       <AppShellHeader style={{ background: 'transparent', border: 'none' }}>
         <Header />
       </AppShellHeader>
@@ -19,7 +19,7 @@ export default function Home() {
             base: 'auto',
             sm: 'calc(100vh - 60px - var(--mantine-spacing-md) * 2)',
           }}
-          pt={{ base: 'xl', sm: 0 }}
+          pb="64px"
         >
           <MainContent />
         </Container>
