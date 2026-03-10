@@ -1,3 +1,5 @@
+'use client';
+
 import { MainContent } from './components/main-content';
 import { Header } from './components/header';
 import {
@@ -6,11 +8,21 @@ import {
   AppShellMain,
   Container,
 } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 
 export default function Home() {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   return (
-    <AppShell padding="md" header={{ height: 70 }}>
-      <AppShellHeader style={{ background: 'transparent', border: 'none' }}>
+    <AppShell padding="md" header={{ height: isMobile ? 35 : 70 }}>
+      <AppShellHeader
+        style={{
+          background: 'transparent',
+          border: 'none',
+          position: isMobile ? 'relative' : 'fixed',
+          padding: 0,
+        }}
+      >
         <Header />
       </AppShellHeader>
       <AppShellMain>
