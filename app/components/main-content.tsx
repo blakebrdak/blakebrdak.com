@@ -47,9 +47,9 @@ export function MainContent() {
         <Text size="md" style={textAnimation(2500)}>
           I’m currently a software engineer at{' '}
           <LinkWithIcon
-            href="https://www.nutshell.com"
-            label="Nutshell CRM"
-            color="#FE5800"
+            href="https://www.read.ai/"
+            label="Read AI"
+            color="#4c47cc"
           />
           !
         </Text>
